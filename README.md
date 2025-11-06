@@ -1,6 +1,6 @@
 # 🔍 Plagiarism Detector
 
-[![Version](https://img.shields.io/badge/Version-1.2-blue.svg)](https://github.com/takiboy88/plagiarism-detector/releases)
+[![Version](https://img.shields.io/badge/Version-1.5-blue.svg)](https://github.com/takiboy88/plagiarism-detector/releases)
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-green.svg)](#)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Local-brightgreen.svg)](#privacy)
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](#)
@@ -27,138 +27,102 @@ Advanced plagiarism detection application that performs all analysis locally on 
 | 📊 **Detailed Reports** | Similarity scores, highlighted sections, PDF export | ✅ |
 | 📚 **Analysis History** | Save and review all your previous analyses | ✅ |
 | 💾 **Export Options** | PDF and text file export capabilities | ✅ |
-| 📱 **Mobile Optimized** | Designed specifically for Android devices | ✅ |
+| ✏️ **Text Editing & Recheck** | Edit text and reanalyze for improvements | ✅ |
+| 🎯 **Intuitive Navigation** | Simple return buttons that always go to home | ✅ |
+| �� **Mobile Optimized** | Designed specifically for Android devices | ✅ |
 
 ---
 
-## 🚀 **What's New in v1.2**
+## 🚀 **What's New in v1.5**
 
-### 🐛 **Critical Bug Fix** 
-- **✅ TypeToken Error Fixed** - Resolved "TypeToken must be created with a type argument" crash
-- **✅ ProGuard Compatibility** - Improved obfuscation rules for Gson serialization  
-- **✅ Analysis Results Fixed** - History and results now work properly in release builds
-- **✅ Error Handling** - Added robust exception handling for JSON operations
+### 🎯 **Navigation & Algorithm Improvements**
+- **✅ Simplified Navigation** - All return buttons now go directly to home screen
+- **✅ No Navigation Loops** - Prevented getting stuck in navigation cycles  
+- **✅ Enhanced Algorithm** - Improved similarity scoring for more accurate results
+- **✅ Better Score Validation** - Added sanity checks for consistent similarity scores
+
+### 🐛 **All Previous Fixes Maintained**
+- **✅ Export Function Fixed** - PDF and text export working perfectly
+- **✅ Recheck Button Fixed** - Text editing and reanalysis fully functional
+- **✅ Database Enhanced** - Reference text storage for reliable recheck
+- **✅ TypeToken Error Fixed** - No more crashes in release builds
 
 ### 🔧 **Technical Improvements**  
-- **Enhanced ProGuard Rules** - Better protection for Gson and Room entities
-- **Stable JSON Serialization** - Replaced TypeToken with Array-based approach
-- **Crash Prevention** - Try-catch blocks for safer data operations
-- **Code Optimization** - Improved R8 compatibility
+- **Enhanced Similarity Detection** - More accurate plagiarism scoring
+- **Simplified User Experience** - Predictable navigation throughout the app
+- **Algorithm Optimization** - Reduced complex calculations for better consistency
+- **Conservative Score Adjustments** - More reliable detection results
 
 ---
 
 ## 📦 **Release Information**
 
-| Detail | Value |
-|--------|-------|
-| **Latest Version** | 1.2 (Code: 3) |
-| **Release Date** | November 5, 2025 |
-| **File Size** | 8.39 MB (compressed) |
-| **Format** | Android App Bundle (AAB) |
-| **Signature** | Production signed |
-| **Target SDK** | 34 (Android 14) |
+### **Current Version: 1.5**
+- **Version Code:** 11
+- **Build Date:** November 6, 2025
+- **File Size:** 8.0 MB (AAB)
+- **Target SDK:** 35 (Android 15)
+- **Minimum SDK:** 24 (Android 7.0)
 
-### 📋 **Version History**
-| Version | Code | Key Changes |
-|---------|------|-------------|
-| **1.2** | 3 | 🐛 Fixed TypeToken crash, enhanced ProGuard rules |
-| **1.1** | 2 | ✅ AdMob integration, production IDs configured |
-| **1.0** | 1 | 🚀 Initial release with core functionality |
-
----
-
-## 🔒 **Privacy & Security**
-
-### **Privacy Guarantee**
-- **✅ 100% Local Processing** - All text analysis performed on your device
-- **✅ No Server Uploads** - Your content never leaves your phone
-- **✅ No Data Collection** - We don't collect or store your personal information
-- **✅ Encrypted Storage** - Local data protected with Android encryption
-- **✅ Minimal Permissions** - Only INTERNET and NETWORK_STATE for ads
-
-### **What Data Stays Local:**
-- Original text submitted for analysis
-- Analysis results and similarity scores
-- Detected plagiarized sections
-- Analysis history and summaries
-- Exported PDF and text files
-
----
-
-## 🛠️ **Technical Details**
-
-### **App Specifications**
-```
-Package Name:     com.takitareq.plagiarism_detector
-Version Name:     1.2
-Version Code:     3
-Min SDK:          Compatible with modern Android versions
-Target SDK:       34 (Android 14)
-Architecture:     Universal (ARM64, ARM, x86_64)
-Format:          Android App Bundle (AAB)
-Size:            8.39 MB (compressed)
-```
-
-### **Technology Stack**
-- **Language:** Kotlin
-- **UI Framework:** Jetpack Compose
-- **Database:** Room (SQLite)
-- **Architecture:** MVVM + Repository Pattern
-- **Build System:** Gradle with Kotlin DSL
-- **Obfuscation:** ProGuard/R8 enabled
-- **Ad Platform:** Google AdMob
-
-### **Dependencies & Libraries**
-- AndroidX Core, Lifecycle, Navigation
-- Jetpack Compose (UI, Material3, Navigation)
-- Room Database (Runtime, Compiler, KTX)
-- Google AdMob SDK
-- Gson (JSON serialization)
-- Hilt (Dependency Injection)
-- Kotlin Coroutines
-
----
-
-## 📱 **Installation & Usage**
-
-### **From Google Play Store** (Recommended)
-1. Visit Google Play Store
-2. Search for "Plagiarism Detector by Takiboy"
-3. Install the app
-4. Grant necessary permissions
-5. Start analyzing your text!
-
-### **Manual Installation** (Advanced Users)
-1. Download the latest AAB/APK from [Releases](https://github.com/takiboy88/plagiarism-detector/releases)
-2. Enable "Install from Unknown Sources" in Android settings
-3. Install the downloaded file
-4. Launch and enjoy!
-
-### **How to Use**
-1. **Open the App** - Launch Plagiarism Detector
-2. **Enter Text** - Input the text you want to analyze
-3. **Add Reference** - Paste the text to compare against (optional)
-4. **Start Analysis** - Tap the analyze button
-5. **Review Results** - See similarity scores and highlighted sections
-6. **Export/Save** - Export as PDF or save to history
+### **Key Improvements:**
+- **Navigation UX:** Simplified return button behavior
+- **Algorithm Accuracy:** Enhanced similarity detection
+- **User Experience:** More intuitive and predictable interface
+- **Technical Quality:** Improved code reliability and maintainability
 
 ---
 
 ## 🎯 **Google Play Store Status**
 
-### ✅ **Requirements Met**
+### ✅ **All Requirements Met**
 - [x] **App Bundle (AAB)** format ✅
-- [x] **Target SDK 34** (Android 14) ✅  
+- [x] **Target SDK 35** (Android 15) ✅  
 - [x] **64-bit support** enabled ✅
 - [x] **Signed with production key** ✅
 - [x] **ProGuard enabled & optimized** ✅
-- [x] **Critical bugs resolved** ✅
+- [x] **All critical bugs resolved** ✅
+- [x] **Export functionality working** ✅
+- [x] **Recheck functionality working** ✅
+- [x] **Navigation improved** ✅
 - [x] **Minimal permissions** (INTERNET, NETWORK_STATE only) ✅
 
 ### 📄 **Legal Documents**
 - [x] **Privacy Policy:** [takiboy88.github.io/privacy_policy.html](https://takiboy88.github.io/privacy_policy.html)
 - [x] **Terms of Service:** [takiboy88.github.io/terms_of_service.html](https://takiboy88.github.io/terms_of_service.html)
 - [x] **app-ads.txt:** [takiboy88.github.io/app-ads.txt](https://takiboy88.github.io/app-ads.txt)
+
+---
+
+## 🔍 **How It Works**
+
+### **Privacy-First Analysis**
+1. **📝 Input Text** - Enter or paste your text directly in the app
+2. **🔒 Local Processing** - All analysis happens on your device
+3. **⚡ Real-Time Results** - Get instant similarity scores and detailed reports
+4. **💾 Export & Save** - Generate PDF reports or save as text files
+5. **✏️ Edit & Recheck** - Make improvements and reanalyze your text
+
+### **Algorithm Features**
+- **Multiple Detection Methods** - Word overlap, sequence analysis, semantic similarity
+- **Smart Thresholds** - Optimized sensitivity for accurate detection
+- **Score Validation** - Sanity checks ensure reasonable and consistent results
+- **Reference Text Support** - Compare against specific source material
+
+---
+
+## 📊 **Technical Specifications**
+
+### **Performance**
+- **Analysis Speed:** Real-time for texts up to 10,000 words
+- **Accuracy:** Advanced multi-algorithm approach for reliable detection
+- **Memory Usage:** < 100MB during analysis
+- **Battery Optimization:** Efficient algorithms minimize power consumption
+
+### **Compatibility**
+- **Android Version:** 7.0 (API 24) and above
+- **Architecture:** Supports both 32-bit and 64-bit devices
+- **Storage:** Requires ~20MB for installation
+- **Permissions:** Only INTERNET and NETWORK_STATE (for ads)
 
 ---
 
@@ -182,17 +146,50 @@ Interstitial:    ca-app-pub-5941977662892783/5662274843
 ## 🧪 **Testing**
 
 ### **Critical Test Scenarios**
-- [x] **Text Analysis** - Verify no TypeToken errors
+- [x] **Text Analysis** - Verify accurate similarity detection
 - [x] **Results Display** - Check analysis results show correctly  
 - [x] **History Screen** - Confirm past analyses load properly
-- [x] **Export Functions** - Test PDF/text export works
+- [x] **Export Functions** - Test PDF/text export works perfectly
+- [x] **Recheck Feature** - Verify text editing and reanalysis works
+- [x] **Navigation Flow** - Confirm return buttons work intuitively
 - [x] **AdMob Integration** - Verify ads display correctly
 
 ### **Performance Benchmarks**
 - **Startup Time:** < 3 seconds
 - **Analysis Speed:** Real-time for texts up to 10,000 words
+- **Navigation Response:** Instant screen transitions
+- **Export Speed:** PDF generation < 5 seconds
 - **Memory Usage:** < 100MB during analysis
 - **Battery Impact:** Minimal (optimized algorithms)
+
+---
+
+## 📋 **Version History**
+
+| Version | Code | Release Date | Key Features |
+|---------|------|--------------|--------------|
+| **1.5** | 11 | Nov 6, 2025 | 🎯 Navigation improvements, algorithm accuracy enhanced |
+| **1.4** | 5-10 | Nov 2025 | 🔧 Various improvements and stability fixes |
+| **1.3** | 4 | Nov 2025 | 🐛 Export fixes, recheck functionality, database migration |
+| **1.2** | 3 | Nov 2025 | 🐛 TypeToken crash fix, ProGuard compatibility |
+| **1.1** | 2 | Oct 2025 | ✅ AdMob integration, production IDs |
+| **1.0** | 1 | Oct 2025 | 🚀 Initial release with core functionality |
+
+---
+
+## 🔮 **Roadmap**
+
+### **Coming Soon**
+- 🌐 **Multi-language Support** - Support for non-English texts
+- 📱 **iOS Version** - Expand to Apple devices
+- 🎨 **Themes & Customization** - Dark mode and color options
+- 📊 **Advanced Analytics** - Detailed plagiarism pattern analysis
+
+### **Long-term Goals**
+- 🤖 **AI-Powered Suggestions** - Writing improvement recommendations
+- 📚 **Citation Management** - Automatic citation generation
+- 🔗 **Cloud Sync** - Optional encrypted cloud backup (privacy-maintained)
+- 👥 **Team Features** - Collaborative document analysis
 
 ---
 
@@ -217,7 +214,7 @@ Interstitial:    ca-app-pub-5941977662892783/5662274843
 ### **Get Help**
 - 📧 **Email Support:** ibbat8861@gmail.com
 - 🐛 **Bug Reports:** [GitHub Issues](https://github.com/takiboy88/plagiarism-detector/issues)
-- 💡 **Feature Requests:** [GitHub Discussions](https://github.com/takiboy88/plagiarism-detector/discussions)
+- �� **Feature Requests:** [GitHub Discussions](https://github.com/takiboy88/plagiarism-detector/discussions)
 - 📱 **App Reviews:** Google Play Store (Coming Soon)
 
 ### **Response Time**
@@ -234,6 +231,7 @@ Plagiarism Detector represents a **privacy-first approach** to text analysis too
 **Ready for Production Deployment** ✅  
 **Google Play Store Optimized** ✅  
 **Privacy Guaranteed** ✅  
+**Enhanced User Experience** ✅  
 
 ---
 
@@ -257,4 +255,4 @@ This application is designed with privacy as the core principle. All processing 
 
 ---
 
-*Last Updated: November 5, 2025 | Version 1.2 | Build 3*
+*Last Updated: November 6, 2025 | Version 1.5 | Build 11*
