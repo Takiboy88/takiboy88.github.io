@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Relinx</title>
+    <meta name="description" content="Terms of Service for Relinx - understand your rights and responsibilities when using our link management app.">
+    
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #FFC107;
+            --accent-color: #FF5722;
+            --background-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --danger-color: #F44336;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #1976D2);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .last-updated {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--surface-color);
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content */
+        .content {
+            background: var(--surface-color);
+            margin: 40px 0;
+            padding: 60px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .toc {
+            background: var(--background-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+
+        .toc h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .toc li {
+            margin: 5px 0;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 50px;
+            scroll-margin-top: 100px;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .section h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin: 8px 0;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box.success {
+            background: #e8f5e8;
+            border-left-color: var(--success-color);
+        }
+
+        .highlight-box.warning {
+            background: #fff3e0;
+            border-left-color: var(--warning-color);
+        }
+
+        .highlight-box.danger {
+            background: #ffebee;
+            border-left-color: var(--danger-color);
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box.warning h4 {
+            color: var(--warning-color);
+        }
+
+        .highlight-box.danger h4 {
+            color: var(--danger-color);
+        }
+
+        /* Links */
+        .content a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .content a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: var(--background-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Important Notice */
+        .important-notice {
+            background: linear-gradient(135deg, #ffeb3b, #ffc107);
+            color: #333;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .important-notice h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Footer Navigation */
+        .footer-nav {
+            background: var(--text-primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 30px 20px;
+                margin: 20px 0;
+            }
+
+            .toc {
+                padding: 20px;
+            }
+
+            .toc ul {
+                grid-template-columns: 1fr;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>Your rights and responsibilities when using Relinx</p>
+            <div class="last-updated">Last updated: November 9, 2025</div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Relinx</a> > Terms of Service
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <main class="content">
+            <!-- Table of Contents -->
+            <nav class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#agreement">Agreement to Terms</a></li>
+                    <li><a href="#service-description">Description of Service</a></li>
+                    <li><a href="#acceptable-use">Acceptable Use</a></li>
+                    <li><a href="#user-content">User Content</a></li>
+                    <li><a href="#privacy">Privacy</a></li>
+                    <li><a href="#third-party">Third-Party Services</a></li>
+                    <li><a href="#intellectual-property">Intellectual Property</a></li>
+                    <li><a href="#disclaimers">Disclaimers</a></li>
+                    <li><a href="#liability">Limitation of Liability</a></li>
+                    <li><a href="#data-backup">Data Backup</a></li>
+                    <li><a href="#updates">App Updates</a></li>
+                    <li><a href="#termination">Termination</a></li>
+                    <li><a href="#governing-law">Governing Law</a></li>
+                    <li><a href="#changes">Changes to Terms</a></li>
+                    <li><a href="#contact">Contact Information</a></li>
+                </ul>
+            </nav>
+
+            <!-- Important Notice -->
+            <div class="important-notice">
+                <h3>⚠️ Important Notice</h3>
+                <p>
+                    By downloading, installing, or using the Relinx mobile application, you agree to be bound by these Terms of Service. 
+                    Please read them carefully before using the app.
+                </p>
+            </div>
+
+            <!-- Agreement to Terms -->
+            <section id="agreement" class="section">
+                <h2>📝 Agreement to Terms</h2>
+                <p>
+                    By downloading, installing, or using the Relinx mobile application, you agree to be bound by these 
+                    Terms of Service ("Terms"). If you do not agree to these Terms, do not use the app.
+                </p>
+                <div class="highlight-box warning">
+                    <h4>⚖️ Legal Agreement</h4>
+                    <p>
+                        These terms constitute a legally binding agreement between you and the developers of Relinx. 
+                        Your continued use of the app signifies your acceptance of these terms.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Service Description -->
+            <section id="service-description" class="section">
+                <h2>📱 Description of Service</h2>
+                <p>Relinx is a mobile application that allows users to:</p>
+                <ul>
+                    <li>Save and organize web links by categories and tags</li>
+                    <li>Search through saved links with powerful filtering</li>
+                    <li>Export and import link collections in JSON format</li>
+                    <li>Customize categories with icons and colors</li>
+                    <li>Use drag-and-drop functionality for organization</li>
+                    <li>Access links offline (stored locally on device)</li>
+                </ul>
+            </section>
+
+            <!-- Acceptable Use -->
+            <section id="acceptable-use" class="section">
+                <h2>✅ Acceptable Use</h2>
+                <p>You agree to use Relinx only for lawful purposes. You will not:</p>
+                
+                <div class="highlight-box danger">
+                    <h4>🚫 Prohibited Activities</h4>
+                    <ul>
+                        <li>Use the app to store or share illegal content</li>
+                        <li>Attempt to reverse engineer or modify the app</li>
+                        <li>Use the app in a way that could damage or overburden our services</li>
+                        <li>Violate any applicable laws or regulations</li>
+                        <li>Store links to harmful, malicious, or illegal websites</li>
+                        <li>Use the app for commercial spam or mass link distribution</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- User Content -->
+            <section id="user-content" class="section">
+                <h2>👤 User Content</h2>
+                <ul>
+                    <li><strong>Ownership:</strong> You retain ownership of all links and data you store in Relinx</li>
+                    <li><strong>Responsibility:</strong> You are responsible for the content you save and organize</li>
+                    <li><strong>No Monitoring:</strong> We do not monitor or control the content you store</li>
+                    <li><strong>Content Standards:</strong> You agree not to store illegal or harmful content</li>
+                </ul>
+                
+                <div class="highlight-box success">
+                    <h4>🔒 Your Data, Your Control</h4>
+                    <p>
+                        All your links and categories are stored locally on your device. You have complete 
+                        control over your data and can export it at any time.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Privacy -->
+            <section id="privacy" class="section">
+                <h2>🔐 Privacy</h2>
+                <p>
+                    Your privacy is important to us. Please review our 
+                    <a href="privacy_policy.html">Privacy Policy</a>, which explains how we collect and use your information.
+                </p>
+                <div class="highlight-box">
+                    <h4>🛡️ Privacy Commitment</h4>
+                    <p>
+                        We are committed to protecting your privacy. All personal data remains on your device, 
+                        and we do not collect or transmit your link collection to external servers.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Third-Party Services -->
+            <section id="third-party" class="section">
+                <h2>🔗 Third-Party Services</h2>
+                
+                <h3>📢 Google AdMob</h3>
+                <p>
+                    Our app displays advertisements through Google AdMob. Your use of the app constitutes 
+                    agreement to Google AdMob's terms and policies.
+                </p>
+                <div class="highlight-box warning">
+                    <h4>⚠️ Third-Party Terms</h4>
+                    <p>
+                        When using third-party services integrated into Relinx, you are also bound by their 
+                        respective terms of service and privacy policies.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Intellectual Property -->
+            <section id="intellectual-property" class="section">
+                <h2>💡 Intellectual Property</h2>
+                <ul>
+                    <li>Relinx and its original content are protected by copyright and other laws</li>
+                    <li>You may not reproduce, distribute, or create derivative works without permission</li>
+                    <li>All trademarks and logos are the property of their respective owners</li>
+                    <li>Open source components are subject to their respective licenses</li>
+                </ul>
+            </section>
+
+            <!-- Disclaimers -->
+            <section id="disclaimers" class="section">
+                <h2>⚠️ Disclaimers</h2>
+                
+                <h3>"As Is" Service</h3>
+                <p>
+                    Relinx is provided "as is" without warranties of any kind, either express or implied.
+                </p>
+
+                <h3>No Guarantee</h3>
+                <div class="highlight-box warning">
+                    <h4>🚨 Service Limitations</h4>
+                    <p>We do not guarantee that:</p>
+                    <ul>
+                        <li>The app will be error-free or uninterrupted</li>
+                        <li>The app will meet your specific requirements</li>
+                        <li>Data loss will not occur</li>
+                        <li>The app will be compatible with all devices</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Limitation of Liability -->
+            <section id="liability" class="section">
+                <h2>🛡️ Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law, we shall not be liable for:</p>
+                <ul>
+                    <li>Any indirect, incidental, or consequential damages</li>
+                    <li>Loss of data, profits, or business interruption</li>
+                    <li>Any damages arising from your use of the app</li>
+                    <li>Issues caused by device malfunctions or operating system changes</li>
+                </ul>
+            </section>
+
+            <!-- Data Backup -->
+            <section id="data-backup" class="section">
+                <h2>💾 Data Backup</h2>
+                <div class="highlight-box warning">
+                    <h4>📋 Your Responsibility</h4>
+                    <p>
+                        You are responsible for backing up your data. We recommend using the built-in export 
+                        feature regularly to create backups of your link collection.
+                    </p>
+                </div>
+            </section>
+
+            <!-- App Updates -->
+            <section id="updates" class="section">
+                <h2>🔄 App Updates</h2>
+                <ul>
+                    <li>We may update the app from time to time</li>
+                    <li>Updates may include new features, bug fixes, or security improvements</li>
+                    <li>Continued use after updates constitutes acceptance of changes</li>
+                    <li>Some updates may require you to accept updated terms</li>
+                </ul>
+            </section>
+
+            <!-- Termination -->
+            <section id="termination" class="section">
+                <h2>🔚 Termination</h2>
+                <ul>
+                    <li>You may stop using the app at any time by uninstalling it</li>
+                    <li>We reserve the right to suspend or terminate access for violations of these Terms</li>
+                    <li>Upon termination, your right to use the app ceases immediately</li>
+                    <li>Data stored on your device remains under your control even after termination</li>
+                </ul>
+            </section>
+
+            <!-- Governing Law -->
+            <section id="governing-law" class="section">
+                <h2>⚖️ Governing Law</h2>
+                <p>
+                    These Terms are governed by applicable international laws and local jurisdiction where the 
+                    app is used. Any disputes will be resolved according to the laws of the user's jurisdiction.
+                </p>
+            </section>
+
+            <!-- Changes to Terms -->
+            <section id="changes" class="section">
+                <h2>📝 Changes to Terms</h2>
+                <p>We reserve the right to modify these Terms at any time. Material changes will be communicated through:</p>
+                <ul>
+                    <li>App store update descriptions</li>
+                    <li>In-app notifications</li>
+                    <li>Updates to this document</li>
+                    <li>Email notifications (if contact information is available)</li>
+                </ul>
+            </section>
+
+            <!-- Contact Information -->
+            <section id="contact" class="section">
+                <h2>📞 Contact Information</h2>
+                <p>
+                    For questions about these Terms of Service, please contact us:
+                </p>
+                
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <a href="mailto:takitareeq@gmail.com" class="contact-link">
+                            📧 Email Support
+                        </a>
+                        <a href="https://github.com/Takiboy88/Relinx" class="contact-link">
+                            💻 GitHub Repository
+                        </a>
+                        <a href="support.html" class="contact-link">
+                            🆘 Support Center
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Acknowledgment -->
+            <div class="highlight-box success">
+                <h4>✅ Acknowledgment</h4>
+                <p>
+                    By using Relinx, you acknowledge that you have read these Terms of Service and agree to be bound by them. 
+                    These Terms are effective as of the date listed above and apply to all users of the Relinx application.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Navigation -->
+    <footer class="footer-nav">
+        <div class="container">
+            <a href="index.html">← Back to Relinx Home</a>
+            <a href="support.html">Support & FAQ</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html>

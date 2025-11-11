@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relinx - Smart Link Management for Android</title>
+    <meta name="description" content="Relinx is a powerful Android app for organizing, categorizing, and managing your important links with smart search and advanced filtering capabilities.">
+    <meta name="keywords" content="link manager, bookmark organizer, Android app, URL organizer, productivity">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/app-icon.png">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Relinx - Smart Link Management for Android">
+    <meta property="og:description" content="Organize, categorize, and manage your important links with smart search and advanced filtering.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://takiboy88.github.io/Relinx/">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Relinx - Smart Link Management">
+    <meta name="twitter:description" content="Powerful Android app for organizing and managing your important links.">
+    
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #FFC107;
+            --accent-color: #FF5722;
+            --background-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #1976D2);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: var(--surface-color);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 30px;
+            background: var(--surface-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: var(--surface-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Tech Specs Section */
+        .tech-specs {
+            background: var(--surface-color);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .spec-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            background: var(--background-color);
+        }
+
+        .spec-item .spec-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .spec-item .spec-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            text-align: center;
+        }
+
+        .screenshot-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .screenshot {
+            width: 250px;
+            height: 444px;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-style: italic;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.05);
+        }
+
+        /* Developer Section */
+        .developer {
+            background: var(--surface-color);
+            text-align: center;
+        }
+
+        .developer-card {
+            background: var(--background-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+
+        .developer-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .developer-info p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .developer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .developer-link {
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .developer-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer p {
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header .tagline {
+                font-size: 1.1rem;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .developer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+                    <div class="app-icon">
+            <img src="assets/images/app-icon.png" alt="Relinx App Icon" style="width: 80px; height: 80px; border-radius: 16px;">
+        </div>
+            <h1>Relinx</h1>
+            <p class="tagline">Smart Link Management for Android</p>
+            <div class="download-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.takitareq.linkbox" class="btn">
+                    📱 Download on Google Play
+                </a>
+                <a href="https://github.com/Takiboy88/Relinx" class="btn btn-secondary">
+                    💻 View on GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">
+                Relinx provides everything you need to organize, manage, and access your important links efficiently.
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Smart Categories & Tags</h3>
+                    <p>Organize your links with customizable categories and multiple tags. Create your own organizational system that works for you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Powerful Search</h3>
+                    <p>Find any link instantly with advanced search capabilities. Search by title, URL, tags, or categories.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Material Design 3</h3>
+                    <p>Beautiful, modern interface following Google's latest Material Design principles for the best user experience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Local Storage</h3>
+                    <p>Your data stays on your device with secure local database storage. No cloud dependency, complete privacy.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3>Export & Import</h3>
+                    <p>Backup and transfer your link collection with easy export/import functionality in JSON format.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Customizable</h3>
+                    <p>Personalize your experience with custom categories, flexible tagging, and intuitive organization tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Specs Section -->
+    <section class="section tech-specs">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <p class="section-subtitle">
+                Built with modern Android development practices and the latest technologies.
+            </p>
+            
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Target SDK</div>
+                    <div class="spec-value">Android 14+ (SDK 35)</div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-label">App Size</div>
+                    <div class="spec-value">8.15 MB</div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-label">Language</div>
+                    <div class="spec-value">Kotlin</div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-label">Database</div>
+                    <div class="spec-value">Room (SQLite)</div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-label">Architecture</div>
+                    <div class="spec-value">MVVM</div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-label">Build System</div>
+                    <div class="spec-value">Gradle 9.0</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="section screenshots">
+        <div class="container">
+            <h2 class="section-title">App Screenshots</h2>
+            <p class="section-subtitle">
+                Take a look at Relinx's clean, intuitive interface designed for productivity.
+            </p>
+            
+            <div class="screenshot-container">
+                <div class="screenshot">
+                    📱 Main Dashboard<br>
+                    <small>Coming Soon</small>
+                </div>
+                <div class="screenshot">
+                    🔍 Search Interface<br>
+                    <small>Coming Soon</small>
+                </div>
+                <div class="screenshot">
+                    ⚙️ Categories & Tags<br>
+                    <small>Coming Soon</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section class="section developer">
+        <div class="container">
+            <h2 class="section-title">About the Developer</h2>
+            
+            <div class="developer-card">
+                <div class="developer-info">
+                    <h3>Taki Tareq</h3>
+                    <p>
+                        Android developer passionate about creating efficient, user-friendly applications. 
+                        Relinx represents my commitment to building tools that solve real-world productivity challenges.
+                    </p>
+                    
+                    <div class="developer-links">
+                        <a href="https://github.com/Takiboy88" class="developer-link">GitHub Profile</a>
+                        <a href="mailto:takitareeq@gmail.com" class="developer-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="support.html" class="footer-link">Support & FAQ</a>
+                <a href="privacy_policy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms_of_service.html" class="footer-link">Terms of Service</a>
+                <a href="https://github.com/Takiboy88/Relinx" class="footer-link">Source Code</a>
+            </div>
+            
+            <p>&copy; 2025 Relinx by Taki Tareq. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

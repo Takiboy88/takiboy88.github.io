@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & FAQ - Relinx</title>
+    <meta name="description" content="Get help with Relinx - frequently asked questions, troubleshooting guides, and contact information for support.">
+    
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #FFC107;
+            --accent-color: #FF5722;
+            --background-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #1976D2);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            background: var(--surface-color);
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--surface-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            background: var(--background-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 25px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Sections */
+        .section {
+            background: var(--surface-color);
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px 30px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 10px;
+            background: var(--background-color);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e3f2fd;
+        }
+
+        .faq-question::before {
+            content: "❓ ";
+            margin-right: 8px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding-left: 10px;
+        }
+
+        .faq-answer ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            margin: 5px 0;
+        }
+
+        /* Contact Cards */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: var(--background-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .contact-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .contact-link {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Troubleshooting */
+        .troubleshoot-item {
+            background: var(--background-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .problem {
+            font-weight: 600;
+            color: var(--warning-color);
+            margin-bottom: 10px;
+        }
+
+        .problem::before {
+            content: "⚠️ ";
+            margin-right: 8px;
+        }
+
+        .solution {
+            color: var(--success-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .solution::before {
+            content: "✅ ";
+            margin-right: 8px;
+        }
+
+        .steps {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .steps ol {
+            padding-left: 20px;
+        }
+
+        .steps li {
+            margin: 8px 0;
+            color: var(--text-secondary);
+        }
+
+        /* System Requirements */
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .req-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--background-color);
+            border-radius: var(--border-radius);
+        }
+
+        .req-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .req-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Footer Navigation */
+        .footer-nav {
+            background: var(--text-primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                justify-content: flex-start;
+            }
+
+            .section-content {
+                padding: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .req-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Support & FAQ</h1>
+            <p>Get help with Relinx - your smart link management app</p>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Relinx</a> > Support & FAQ
+        </div>
+    </nav>
+
+    <!-- Quick Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+                <a href="#requirements" class="nav-link">System Requirements</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="section-content">
+                <div class="faq-item">
+                    <div class="faq-question">What is Relinx and what does it do?</div>
+                    <div class="faq-answer">
+                        Relinx is a powerful Android app designed to help you organize, categorize, and manage your important links and bookmarks. It provides smart search capabilities, custom categories, and tagging systems to keep your digital resources organized and easily accessible.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my data stored securely?</div>
+                    <div class="faq-answer">
+                        Yes, absolutely! Relinx stores all your data locally on your device using a secure SQLite database through Android's Room persistence library. Your data never leaves your device unless you explicitly choose to export it.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I create categories and tags?</div>
+                    <div class="faq-answer">
+                        You can create categories and tags when adding or editing a link:
+                        <ul>
+                            <li>Tap the "+" button to add a new link</li>
+                            <li>Fill in the link details (title, URL, description)</li>
+                            <li>Select or create a category from the dropdown</li>
+                            <li>Add multiple tags separated by commas</li>
+                            <li>Save your link with the new organization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I export my links to use in other applications?</div>
+                    <div class="faq-answer">
+                        Yes! Relinx supports exporting your entire link collection to JSON format. You can then import this data back into Relinx or use it with other applications that support JSON imports.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How does the search function work?</div>
+                    <div class="faq-answer">
+                        Relinx provides comprehensive search capabilities:
+                        <ul>
+                            <li>Search by link title or description</li>
+                            <li>Search by URL or domain</li>
+                            <li>Filter by specific categories</li>
+                            <li>Search by tags</li>
+                            <li>Combine multiple search criteria</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Does Relinx require internet access?</div>
+                    <div class="faq-answer">
+                        Relinx requires internet access only when you want to open links in your browser or when ads are being displayed. All core functionality (adding, editing, searching, organizing links) works completely offline.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is Relinx free to use?</div>
+                    <div class="faq-answer">
+                        Yes, Relinx is completely free to download and use. The app is supported by non-intrusive banner advertisements that help keep the app free while supporting ongoing development.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I use Relinx without seeing ads?</div>
+                    <div class="faq-answer">
+                        The current version includes banner ads to support development costs. The ads are designed to be non-intrusive and don't interfere with the app's functionality. Future updates may include ad-free options.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section id="troubleshooting" class="section">
+            <div class="section-header">
+                <h2>Troubleshooting Guide</h2>
+            </div>
+            <div class="section-content">
+                <div class="troubleshoot-item">
+                    <div class="problem">Links won't open in browser</div>
+                    <div class="solution">Solution: Check URL format and browser settings</div>
+                    <div class="steps">
+                        <ol>
+                            <li>Ensure the URL includes "http://" or "https://" prefix</li>
+                            <li>Check that you have a default browser app installed</li>
+                            <li>Verify the URL is correctly formatted</li>
+                            <li>Try opening a different link to isolate the issue</li>
+                            <li>Restart the app and try again</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <div class="problem">App crashes when starting</div>
+                    <div class="solution">Solution: Clear app data and restart</div>
+                    <div class="steps">
+                        <ol>
+                            <li>Go to Android Settings > Apps > Relinx</li>
+                            <li>Tap "Storage" then "Clear Data"</li>
+                            <li>Restart your device</li>
+                            <li>Open Relinx again</li>
+                            <li>If the issue persists, reinstall the app</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <div class="problem">Search not returning expected results</div>
+                    <div class="solution">Solution: Check search criteria and database</div>
+                    <div class="steps">
+                        <ol>
+                            <li>Clear the search field and try a simpler query</li>
+                            <li>Check if the link exists in the expected category</li>
+                            <li>Try searching by different criteria (title, URL, tags)</li>
+                            <li>Ensure there are no typos in your search term</li>
+                            <li>Restart the app to refresh the database connection</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <div class="problem">Export/Import not working</div>
+                    <div class="solution">Solution: Check file permissions and storage</div>
+                    <div class="steps">
+                        <ol>
+                            <li>Ensure you have sufficient storage space</li>
+                            <li>Check that the app has file access permissions</li>
+                            <li>Try exporting to a different location</li>
+                            <li>Verify the JSON file format before importing</li>
+                            <li>Restart the app and try the operation again</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <div class="problem">Ads loading slowly or not displaying</div>
+                    <div class="solution">Solution: Check network connection</div>
+                    <div class="steps">
+                        <ol>
+                            <li>Verify you have a stable internet connection</li>
+                            <li>Try switching between WiFi and mobile data</li>
+                            <li>Clear the app cache in Android settings</li>
+                            <li>Restart the app to refresh ad connections</li>
+                            <li>Note that ad display doesn't affect core functionality</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Requirements -->
+        <section id="requirements" class="section">
+            <div class="section-header">
+                <h2>System Requirements</h2>
+            </div>
+            <div class="section-content">
+                <div class="req-grid">
+                    <div class="req-item">
+                        <div class="req-label">Android Version</div>
+                        <div class="req-value">7.0+ (API 24)</div>
+                    </div>
+                    <div class="req-item">
+                        <div class="req-label">Target SDK</div>
+                        <div class="req-value">Android 14+ (SDK 35)</div>
+                    </div>
+                    <div class="req-item">
+                        <div class="req-label">Storage Space</div>
+                        <div class="req-value">~10 MB</div>
+                    </div>
+                    <div class="req-item">
+                        <div class="req-label">RAM</div>
+                        <div class="req-value">2 GB recommended</div>
+                    </div>
+                    <div class="req-item">
+                        <div class="req-label">Internet</div>
+                        <div class="req-value">Optional (for links & ads)</div>
+                    </div>
+                    <div class="req-item">
+                        <div class="req-label">Architecture</div>
+                        <div class="req-value">All Android devices</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2>Contact & Support</h2>
+            </div>
+            <div class="section-content">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Support</h3>
+                        <p>Get help with technical issues, feature requests, or general questions.</p>
+                        <a href="mailto:takitareeq@gmail.com" class="contact-link">Send Email</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">💻</div>
+                        <h3>GitHub Issues</h3>
+                        <p>Report bugs, request features, or contribute to the development.</p>
+                        <a href="https://github.com/Takiboy88/Relinx/issues" class="contact-link">Open Issue</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">⭐</div>
+                        <h3>App Reviews</h3>
+                        <p>Share your experience and help other users discover Relinx.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.takitareq.linkbox" class="contact-link">Leave Review</a>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background: var(--background-color); border-radius: var(--border-radius);">
+                    <p><strong>Response Time:</strong> I typically respond to emails within 24-48 hours. For urgent issues, please include "URGENT" in your email subject line.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Navigation -->
+    <footer class="footer-nav">
+        <div class="container">
+            <a href="index.html">← Back to Relinx Home</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="terms_of_service.html">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>

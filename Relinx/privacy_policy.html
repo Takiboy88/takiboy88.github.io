@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Relinx</title>
+    <meta name="description" content="Privacy Policy for Relinx - learn how we protect your data and respect your privacy in our link management app.">
+    
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #FFC107;
+            --accent-color: #FF5722;
+            --background-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #1976D2);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .last-updated {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--surface-color);
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content */
+        .content {
+            background: var(--surface-color);
+            margin: 40px 0;
+            padding: 60px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .toc {
+            background: var(--background-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+
+        .toc h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin: 10px 0;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 50px;
+            scroll-margin-top: 100px;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .section h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin: 8px 0;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box.success {
+            background: #e8f5e8;
+            border-left-color: var(--success-color);
+        }
+
+        .highlight-box.warning {
+            background: #fff3e0;
+            border-left-color: var(--warning-color);
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Links */
+        .content a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .content a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: var(--background-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Footer Navigation */
+        .footer-nav {
+            background: var(--text-primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 30px 20px;
+                margin: 20px 0;
+            }
+
+            .toc {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us</p>
+            <div class="last-updated">Last updated: November 9, 2025</div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Relinx</a> > Privacy Policy
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <main class="content">
+            <!-- Table of Contents -->
+            <nav class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#information-collection">Information We Collect</a></li>
+                    <li><a href="#third-party-services">Third-Party Services</a></li>
+                    <li><a href="#data-security">Data Storage and Security</a></li>
+                    <li><a href="#your-rights">Your Rights</a></li>
+                    <li><a href="#data-retention">Data Retention</a></li>
+                    <li><a href="#children-privacy">Children's Privacy</a></li>
+                    <li><a href="#policy-changes">Changes to This Policy</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Introduction -->
+            <section id="introduction" class="section">
+                <h2>📱 Introduction</h2>
+                <p>
+                    Relinx ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains 
+                    how we collect, use, and safeguard your information when you use our mobile application.
+                </p>
+                <div class="highlight-box success">
+                    <h4>🔒 Privacy First Approach</h4>
+                    <p>
+                        Relinx is designed with privacy as a core principle. All your personal data stays on your device, 
+                        and we never access or transmit your link collection to external servers.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Information Collection -->
+            <section id="information-collection" class="section">
+                <h2>📊 Information We Collect</h2>
+                
+                <h3>💾 Data Stored Locally</h3>
+                <p>The following data is stored locally on your device and never transmitted to external servers:</p>
+                <ul>
+                    <li><strong>Links and Categories:</strong> All links, categories, and tags you create</li>
+                    <li><strong>App Preferences:</strong> Settings like dark mode preference and category configurations</li>
+                    <li><strong>Usage Data:</strong> App usage patterns for improving user experience (local analytics only)</li>
+                </ul>
+
+                <h3>🚫 Data We Do NOT Collect</h3>
+                <div class="highlight-box success">
+                    <h4>✅ Your Privacy is Protected</h4>
+                    <ul>
+                        <li>We do <strong>not</strong> collect personal information</li>
+                        <li>We do <strong>not</strong> access your contacts, photos, or other personal data</li>
+                        <li>We do <strong>not</strong> track your browsing history outside the app</li>
+                        <li>We do <strong>not</strong> share your data with third parties (except as noted below)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Third-Party Services -->
+            <section id="third-party-services" class="section">
+                <h2>🔗 Third-Party Services</h2>
+                
+                <h3>📢 Google AdMob</h3>
+                <p>
+                    Our app uses Google AdMob to display advertisements that help keep the app free. 
+                    AdMob may collect the following information:
+                </p>
+                <ul>
+                    <li>Device information (device type, operating system)</li>
+                    <li>Advertisement interaction data</li>
+                    <li>Anonymous identifiers for advertising</li>
+                </ul>
+                
+                <div class="highlight-box warning">
+                    <h4>⚠️ External Privacy Policy</h4>
+                    <p>
+                        For more information about how Google handles your data, please see 
+                        <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Data Security -->
+            <section id="data-security" class="section">
+                <h2>🔐 Data Storage and Security</h2>
+                <ul>
+                    <li><strong>Local Storage:</strong> All your data is stored locally on your device using secure SQLite database</li>
+                    <li><strong>Industry Standards:</strong> We use industry-standard security measures</li>
+                    <li><strong>No Cloud Storage:</strong> No data is transmitted to our servers</li>
+                    <li><strong>Full Control:</strong> You have complete control over your data</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>🛡️ Security Measures</h4>
+                    <p>
+                        Relinx uses Android's Room persistence library with SQLCipher encryption capabilities 
+                        to ensure your data remains secure on your device.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Your Rights -->
+            <section id="your-rights" class="section">
+                <h2>⚖️ Your Rights</h2>
+                <p>As a user of Relinx, you have the following rights regarding your data:</p>
+                <ul>
+                    <li><strong>Access:</strong> View all data stored by the app through the interface</li>
+                    <li><strong>Delete:</strong> Remove your data by uninstalling the app or using the clear data function</li>
+                    <li><strong>Export:</strong> Export your data using the built-in JSON export feature</li>
+                    <li><strong>Control Ads:</strong> Manage advertisement preferences through your device settings</li>
+                </ul>
+            </section>
+
+            <!-- Data Retention -->
+            <section id="data-retention" class="section">
+                <h2>🗂️ Data Retention</h2>
+                <ul>
+                    <li><strong>Local Data:</strong> Retained until you manually delete it or uninstall the app</li>
+                    <li><strong>Advertisement Data:</strong> Managed by Google AdMob according to their retention policies</li>
+                    <li><strong>App Preferences:</strong> Stored locally and cleared when app data is cleared</li>
+                </ul>
+            </section>
+
+            <!-- Children's Privacy -->
+            <section id="children-privacy" class="section">
+                <h2>👶 Children's Privacy</h2>
+                <div class="highlight-box warning">
+                    <h4>🔞 Age Restriction</h4>
+                    <p>
+                        Our app is not intended for children under 13. We do not knowingly collect 
+                        personal information from children under 13. If you are a parent or guardian 
+                        and believe your child has provided us with personal information, please contact us.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Policy Changes -->
+            <section id="policy-changes" class="section">
+                <h2>📝 Changes to This Policy</h2>
+                <p>
+                    We may update this Privacy Policy from time to time to reflect changes in our practices 
+                    or for other operational, legal, or regulatory reasons. We will notify users of any 
+                    material changes through:
+                </p>
+                <ul>
+                    <li>App update notifications</li>
+                    <li>In-app notifications</li>
+                    <li>Updates to this web page</li>
+                </ul>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact" class="section">
+                <h2>📞 Contact Us</h2>
+                <p>
+                    If you have any questions about this Privacy Policy, your data, or our privacy practices, 
+                    please don't hesitate to contact us:
+                </p>
+                
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <a href="mailto:takitareeq@gmail.com" class="contact-link">
+                            📧 Email Support
+                        </a>
+                        <a href="https://github.com/Takiboy88/Relinx" class="contact-link">
+                            💻 GitHub Repository
+                        </a>
+                        <a href="support.html" class="contact-link">
+                            🆘 Support Center
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Legal Notice -->
+            <div class="highlight-box">
+                <h4>📋 Legal Notice</h4>
+                <p>
+                    This policy is effective as of the date listed above and applies to all users of the Relinx application. 
+                    By using Relinx, you acknowledge that you have read and understood this Privacy Policy.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Navigation -->
+    <footer class="footer-nav">
+        <div class="container">
+            <a href="index.html">← Back to Relinx Home</a>
+            <a href="support.html">Support & FAQ</a>
+            <a href="terms_of_service.html">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>
