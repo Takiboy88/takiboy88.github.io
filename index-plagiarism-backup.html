@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plagiarism Detector - Privacy-First Text Analysis Tool</title>
+    <meta name="description" content="Advanced plagiarism detection app for Android. Analyze text locally with complete privacy. Available on Google Play Store.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 25px;
+            margin: 0 5px;
+            font-size: 0.9em;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #1976d2;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .download-section {
+            text-align: center;
+            background: #1976d2;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #fff;
+            color: #1976d2;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .version-info {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .version-badge {
+            background: #4caf50;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .legal-links {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .legal-links a {
+            color: #1976d2;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 16px;
+            border: 1px solid #1976d2;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .legal-links a:hover {
+            background: #1976d2;
+            color: white;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+            opacity: 0.8;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .screenshot-placeholder {
+            background: #f0f0f0;
+            height: 350px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ccc;
+            font-style: italic;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .header p {
+                font-size: 1.1em;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🔍 Plagiarism Detector</h1>
+            <p>Privacy-First Text Analysis Tool for Android</p>
+            <div>
+                <span class="badge">🔒 100% Privacy</span>
+                <span class="badge">📱 Android App</span>
+                <span class="badge">🆓 Free to Use</span>
+                <span class="badge">🚀 Fast Analysis</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Version Information -->
+            <div class="version-info">
+                <span class="version-badge">Latest: v1.5</span>
+                <strong>Production Ready - Navigation &</strong><br>
+                <small>Released: November 6, 2025 | Size: 8.0 MB | Version Code: 11</small>
+            </div>
+
+            <!-- App Description -->
+            <h2 style="color: #1976d2; margin-bottom: 20px;">📋 About Plagiarism Detector</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                A powerful, privacy-focused plagiarism detection application for Android devices. 
+                Analyze text for similarities and potential plagiarism with complete confidence 
+                that your content stays private on your device.
+            </p>
+
+            <!-- Key Features -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Complete Privacy</h3>
+                    <p>All analysis performed locally on your device. Your text never leaves your phone or gets transmitted to any servers.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Analysis</h3>
+                    <p>Advanced algorithms provide quick and accurate plagiarism detection with detailed similarity scores and reports.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Detailed Reports</h3>
+                    <p>Comprehensive analysis results with similarity percentages, highlighted sections, and exportable PDF reports.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Optimized</h3>
+                    <p>Designed specifically for Android with intuitive interface and smooth performance on all device sizes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Analysis History</h3>
+                    <p>Keep track of all your analyses with built-in history feature. Review, export, or delete previous results anytime.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Export Options</h3>
+                    <p>Export your analysis results as PDF documents or plain text files for sharing or archiving purposes.</p>
+                </div>
+            </div>
+
+            <!-- App Statistics -->
+            <h2 style="color: #1976d2; text-align: center; margin: 40px 0 20px 0;">📈 App Statistics</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">8.0</div>
+                    <div>MB App Size</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div>Privacy Protected</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">34</div>
+                    <div>Target SDK</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">v1.5</div>
+                    <div>Latest Version</div>
+                </div>
+            </div>
+
+            <!-- Screenshots Section -->
+            <h2 style="color: #1976d2; text-align: center; margin: 40px 0 20px 0;">📸 App Screenshots</h2>
+            <div class="screenshots">
+                <div class="screenshot-placeholder">
+                    📱 Main Screen<br>
+                    <small>Text Input & Analysis</small>
+                </div>
+                <div class="screenshot-placeholder">
+                    📊 Results View<br>
+                    <small>Similarity Analysis</small>
+                </div>
+                <div class="screenshot-placeholder">
+                    📚 History Screen<br>
+                    <small>Past Analyses</small>
+                </div>
+                <div class="screenshot-placeholder">
+                    📄 Export Options<br>
+                    <small>PDF & Text Export</small>
+                </div>
+            </div>
+
+            <!-- What's New in v1.5 -->
+            <h2 style="color: #1976d2; margin: 40px 0 20px 0;">🚀 What's New in v1.5</h2>
+            <div style="background: #e8f5e8; border-left: 4px solid #4caf50; padding: 20px; margin: 20px 0;">
+                <h3 style="color: #2e7d32; margin-bottom: 15px;">🎯 Navigation 🎯 Navigation <h3 style="color: #856404; margin-bottom: 15px;">🐛 Critical Bug Fix</h3> Algorithm Enhanced Algorithm Enhanced</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Navigation Improvements</strong> - Simplified return navigation, eliminated loops, consistent user experience</li>
+                    <li><strong>Algorithm Accuracy</strong> - Enhanced similarity scoring with better thresholds and validation</li>
+                    <li><strong>Recheck Logic Fixed</strong> - Resolved same score issue when rechecking edited text</li>
+                    <li><strong>User Experience</strong> - Added smart feedback and improved reference text handling</li>
+                </ul>
+            </div>
+
+            <!-- Technical Details -->
+            <h2 style="color: #1976d2; margin: 40px 0 20px 0;">⚙️ Technical Details</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div>
+                    <h4>📦 App Information</h4>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li><strong>Package:</strong> com.takitareq.plagiarism_detector</li>
+                        <li><strong>Version: 1.5 (Code: 11))</li>
+                        <li><strong>Size:</strong> 8.0 MB</li>
+                        <li><strong>Format:</strong> App Bundle (AAB)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>🛡️ Security & Privacy</h4>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li><strong>Local Processing:</strong> ✅</li>
+                        <li><strong>No Server Upload:</strong> ✅</li>
+                        <li><strong>Encrypted Storage:</strong> ✅</li>
+                        <li><strong>Minimal Permissions:</strong> ✅</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>📱 Compatibility</h4>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li><strong>Target SDK:</strong> 34 (Android 14)</li>
+                        <li><strong>Min SDK:</strong> Compatible</li>
+                        <li><strong>64-bit Support:</strong> ✅</li>
+                        <li><strong>Architecture:</strong> Universal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="download-section">
+            <h2 style="margin-bottom: 20px;">📱 Download Plagiarism Detector</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1em;">
+                Get the latest version from Google Play Store or download the App Bundle directly
+            </p>
+            
+            <a href="#" class="download-btn" style="background: #01875f;">
+                📱 Google Play Store
+                <br><small>Coming Soon</small>
+            </a>
+            
+            <a href="https://github.com/takiboy88/plagiarism-detector/releases" class="download-btn">
+                📦 Direct Download
+                <br><small>APK/AAB Files</small>
+            </a>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="legal-links">
+            <h3 style="margin-bottom: 20px; color: #1976d2;">📄 Legal Documents</h3>
+            <a href="privacy_policy.html">🔒 Privacy Policy</a>
+            <a href="terms_of_service.html">📋 Terms of Service</a>
+            <a href="app-ads.txt">🔧 app-ads.txt</a>
+        </div>
+
+        <!-- Developer Information -->
+        <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin: 30px 0; text-align: center;">
+            <h3 style="color: #1976d2; margin-bottom: 15px;">👨‍💻 Developer Information</h3>
+            <p><strong>Developer:</strong> Takiboy</p>
+            <p><strong>Contact:</strong> ibbat8861@gmail.com</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/takiboy88" style="color: #1976d2;">@takiboy88</a></p>
+            <p style="margin-top: 15px; color: #666;">
+                Committed to creating privacy-first applications that respect user data and provide genuine value.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2025 Plagiarism Detector by Takiboy. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                Privacy-First • Local Processing • No Data Collection • Open Source Friendly
+            </p>
+            <p style="margin-top: 15px; font-size: 0.8em;">
+                Last Updated: November 6, 2025 | Version 1.5 | Build 11
+            </p>
+        </div>
+    </div>
+
+    <!-- Simple Analytics (Privacy-Friendly) -->
+    <script>
+        // Simple page view counter (no tracking, no cookies)
+        console.log('Plagiarism Detector - Page Loaded');
+        
+        // Add smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add loading animation for external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.addEventListener('click', function() {
+                this.style.opacity = '0.6';
+                this.innerHTML += ' <span style="font-size: 0.8em;">↗</span>';
+            });
+        });
+    </script>
+</body>
+</html>
