@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plagiarism Detector - Détecteur de Plagiat Intelligent</title>
+    <meta name="description" content="Détecteur de plagiat avancé avec IA intégrée - Analyse précise et rapide de similarité textuelle">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+        .breadcrumb span {
+            color: white;
+            margin: 0 0.5rem;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 30px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 0 0 1rem 0;
+            font-size: 3rem;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3rem;
+            margin: 0.5rem 0 2rem 0;
+        }
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        .download-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+        }
+        .download-btn.secondary {
+            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            box-shadow: 0 8px 25px rgba(253, 121, 168, 0.3);
+        }
+        .download-btn.secondary:hover {
+            box-shadow: 0 12px 35px rgba(253, 121, 168, 0.4);
+        }
+        .tech-specs {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .spec-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .spec-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .whats-new {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .whats-new h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .whats-new ul {
+            list-style: none;
+            padding: 0;
+        }
+        .whats-new li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .whats-new li:before {
+            content: "🎉";
+            position: absolute;
+            left: 0;
+        }
+        .contact-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../index.html">🏠 TakiTareq Portfolio</a>
+            <span>></span>
+            <strong>Plagiarism Detector</strong>
+        </nav>
+
+        <header>
+            <div class="app-icon">PD</div>
+            <h1>Plagiarism Detector</h1>
+            <p class="subtitle">Détecteur de Plagiat Intelligent avec IA</p>
+            <div class="version-badge">🚀 Version 1.6 - IA Enhanced</div>
+        </header>
+
+        <div class="whats-new">
+            <h3>🎉 Nouveautés Version 1.6</h3>
+            <ul>
+                <li>Intégration IA révolutionnaire avec Google Gemini et HuggingFace</li>
+                <li>Analyse 5-facteurs : sémantique, lexicale, structurelle, syntaxique, contextuelle</li>
+                <li>Mode double : "Rapide & Privé" + "Avancé & IA"</li>
+                <li>Indicateurs de progression en temps réel</li>
+                <li>Amélioration de 35% de la précision globale</li>
+                <li>Interface moderne avec Jetpack Compose</li>
+            </ul>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-title">IA Avancée</div>
+                <p>Détection alimentée par l'IA avec Google Gemini pour identifier les paraphrases sophistiquées et reformulations subtiles.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <div class="feature-title">Analyse Multi-Facteurs</div>
+                <p>5 algorithmes de détection combinés : analyse sémantique (35%), lexicale (25%), structurelle (15%), syntaxique (15%), contextuelle (10%).</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-title">Mode Privé</div>
+                <p>Analyse locale sans internet pour protéger vos données sensibles. Résultats instantanés en moins d'1 seconde.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Rapports Détaillés</div>
+                <p>Génération automatique de rapports PDF avec scores de similarité, passages suspects et analyses complètes.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Performance</div>
+                <p>Interface fluide avec Jetpack Compose, architecture MVVM, et optimisations pour une expérience utilisateur exceptionnelle.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-title">Précision Élevée</div>
+                <p>Détection améliorée de +50% pour la sémantique, +40% pour les paraphrases, +60% pour la compréhension contextuelle.</p>
+            </div>
+        </div>
+
+        <div class="tech-specs">
+            <h2>📋 Spécifications Techniques</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-title">🤖 Intelligence Artificielle</div>
+                    <p>Google Gemini API, HuggingFace Transformers, Mode démonstration sans configuration</p>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-title">🏗️ Architecture</div>
+                    <p>MVVM avec Hilt DI, Coroutines Kotlin, Jetpack Compose UI moderne</p>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-title">📱 Compatibilité</div>
+                    <p>Android 7.0+ (API 24), Target Android 15 (API 35), Taille : 9.0 MB</p>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-title">⚡ Performance</div>
+                    <p>Analyse locale < 1s, IA 2-5s, Traitement asynchrone optimisé</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h2>📱 Télécharger l'Application</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                Disponible gratuitement sur Google Play Store<br>
+                <small>Compatible Android 7.0 et versions ultérieures</small>
+            </p>
+            <a href="#" class="download-btn">📲 Télécharger sur Google Play</a>
+            <a href="support.html" class="download-btn secondary">🛠️ Support & Aide</a>
+        </div>
+
+        <div class="contact-section">
+            <h2>📧 Support Développeur</h2>
+            <p><strong>Email :</strong> ibbat8861@gmail.com</p>
+            <p><strong>Support :</strong> Réponse sous 24-48h</p>
+            
+            <h3 style="margin-top: 2rem;">🔗 Informations Légales</h3>
+            <p style="margin: 1rem 0;">
+                <a href="privacy_policy.html" style="margin: 0 1rem; color: #667eea; text-decoration: none; font-weight: bold;">📜 Politique de Confidentialité</a> |
+                <a href="terms_of_service.html" style="margin: 0 1rem; color: #667eea; text-decoration: none; font-weight: bold;">📋 Conditions d'Utilisation</a>
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <a href="../index.html" class="back-button">← Retour au Portfolio TakiTareq</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 TakiTareq - Plagiarism Detector</p>
+            <p>Application développée avec ❤️ pour l'éducation et l'intégrité académique</p>
+        </footer>
+    </div>
+</body>
+</html>

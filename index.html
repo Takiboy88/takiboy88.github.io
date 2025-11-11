@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakiTareq - Développeur d'Applications Android</title>
+    <meta name="description" content="Portfolio de TakiTareq - Développeur d'applications Android innovantes et performantes">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .developer-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+            border: 4px solid rgba(255,255,255,0.3);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .app-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .app-icon.plagiarism {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .app-icon.coming-soon {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            color: #2d3436;
+        }
+        
+        .app-icon.placeholder {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+        }
+        
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .app-category {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .app-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .app-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .app-features li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+        
+        .app-features li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .app-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .status-live {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-development {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-planning {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .app-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .app-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .app-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .app-link.secondary {
+            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.3);
+        }
+        
+        .contact-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            padding: 1.5rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            color: white;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="developer-avatar">TT</div>
+            <h1>TakiTareq</h1>
+            <p class="subtitle">Développeur d'Applications Android Innovantes</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Applications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Téléchargements</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.5★</div>
+                    <div class="stat-label">Note Moyenne</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Années d'Expérience</div>
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <span class="tech-item">🤖 Android (Kotlin/Java)</span>
+                <span class="tech-item">🎨 Jetpack Compose</span>
+                <span class="tech-item">🏗️ Architecture MVVM</span>
+                <span class="tech-item">🔍 Intelligence Artificielle</span>
+                <span class="tech-item">☁️ Firebase & Cloud</span>
+                <span class="tech-item">📊 Analytics & AdMob</span>
+            </div>
+        </header>
+
+        <section class="apps-grid">
+            <!-- Application principale : Plagiarism Detector -->
+            <div class="app-card">
+                <div class="app-icon plagiarism">PD</div>
+                <h2 class="app-title">Plagiarism Detector</h2>
+                <div class="app-category">Éducation • IA & Analyse</div>
+                <div class="app-status status-live">🚀 En Production</div>
+                
+                <p class="app-description">
+                    Détecteur de plagiat intelligent avec IA intégrée. Analyse avancée de similarité textuelle 
+                    utilisant Google Gemini et HuggingFace pour une détection précise des paraphrases et reformulations.
+                </p>
+                
+                <ul class="app-features">
+                    <li>Analyse IA avec 5 facteurs de détection</li>
+                    <li>Mode privé et mode IA avancé</li>
+                    <li>Génération de rapports PDF</li>
+                    <li>Interface moderne avec Jetpack Compose</li>
+                    <li>+35% de précision vs versions précédentes</li>
+                </ul>
+                
+                <div class="app-links">
+                    <a href="plagiarism-detector/" class="app-link">📱 Télécharger</a>
+                    <a href="plagiarism-detector/support.html" class="app-link secondary">🛠️ Support</a>
+                </div>
+            </div>
+
+            <!-- Espace pour vos autres applications -->
+            <div class="app-card">
+                <div class="app-icon coming-soon">📱</div>
+                <h2 class="app-title">Votre Prochaine App</h2>
+                <div class="app-category">Catégorie • Fonctionnalité</div>
+                <div class="app-status status-development">🔨 En Développement</div>
+                
+                <p class="app-description">
+                    Description de votre prochaine application Android. Ajoutez ici les fonctionnalités 
+                    principales et les technologies utilisées.
+                </p>
+                
+                <ul class="app-features">
+                    <li>Fonctionnalité principale 1</li>
+                    <li>Fonctionnalité principale 2</li>
+                    <li>Technologie utilisée</li>
+                    <li>Avantage utilisateur</li>
+                </ul>
+                
+                <div class="app-links">
+                    <a href="#" class="app-link">🔜 Bientôt Disponible</a>
+                </div>
+            </div>
+
+            <!-- Template pour application future -->
+            <div class="app-card">
+                <div class="app-icon placeholder">💡</div>
+                <h2 class="app-title">Application Concept</h2>
+                <div class="app-category">Innovation • Productivité</div>
+                <div class="app-status status-planning">📋 En Planification</div>
+                
+                <p class="app-description">
+                    Idée d'application innovante en cours de conceptualisation. 
+                    Restez connectés pour découvrir les prochaines innovations !
+                </p>
+                
+                <ul class="app-features">
+                    <li>Concept innovant</li>
+                    <li>Technologies modernes</li>
+                    <li>Expérience utilisateur optimale</li>
+                    <li>Performance et sécurité</li>
+                </ul>
+                
+                <div class="app-links">
+                    <a href="#contact" class="app-link">📧 Me Contacter</a>
+                </div>
+            </div>
+
+            <!-- Emplacement pour une 4ème application -->
+            <div class="app-card">
+                <div class="app-icon coming-soon">⚡</div>
+                <h2 class="app-title">Projet Spécial</h2>
+                <div class="app-category">Utilité • Performance</div>
+                <div class="app-status status-development">🔨 En Cours</div>
+                
+                <p class="app-description">
+                    Application spécialisée en cours de développement. 
+                    Combinant performance et simplicité d'utilisation.
+                </p>
+                
+                <ul class="app-features">
+                    <li>Performance optimisée</li>
+                    <li>Interface intuitive</li>
+                    <li>Fonctionnalités avancées</li>
+                    <li>Compatible dernières versions Android</li>
+                </ul>
+                
+                <div class="app-links">
+                    <a href="#" class="app-link">🔜 Coming Soon</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>📧 Contact & Support</h2>
+            <p>Développeur passionné, toujours à l'écoute de vos besoins et suggestions</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Principal</h3>
+                    <p><strong>ibbat8861@gmail.com</strong></p>
+                    <p>Support technique et général</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🎮</div>
+                    <h3>Google Play Store</h3>
+                    <p><strong>Profil Développeur</strong></p>
+                    <p>Toutes mes applications</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h3>Collaboration</h3>
+                    <p><strong>Projets & Partenariats</strong></p>
+                    <p>Développement sur mesure</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(102, 126, 234, 0.1); border-radius: 15px;">
+                <h3>🔗 Liens Légaux</h3>
+                <p style="margin: 1rem 0;">
+                    <a href="privacy-policy.html" style="margin: 0 1rem; color: #667eea; text-decoration: none; font-weight: bold;">📜 Politique de Confidentialité</a> |
+                    <a href="terms-of-service.html" style="margin: 0 1rem; color: #667eea; text-decoration: none; font-weight: bold;">📋 Conditions d'Utilisation</a>
+                </p>
+                <p style="color: #666; font-size: 0.9rem;">
+                    Toutes mes applications respectent les standards de sécurité et de confidentialité de Google Play Store
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 TakiTareq - Développeur d'Applications Android</p>
+            <p>Créateur d'applications innovantes avec passion et expertise technique</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                🚀 Développement Android • 🤖 Intelligence Artificielle • 🎨 UX/UI Design
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
